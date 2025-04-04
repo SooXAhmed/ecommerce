@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Images/user-plus-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/product-details.css">
+</head>
+<body>
+    <header class="flex">
+        <a href="../index.html" class="logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span style="font-weight: bold;">YMSS</span>
+            <p style="letter-spacing: 0.5px;font-size: large;margin-top: 9%;">Shopping</p>
+        </a>
+
+        <div class="links" style="color: white;">
+            <a href="http://localhost:4000/api/v1/user/login" class="sign-in" style="font-size: 15px;">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login</a>
+
+        </div>
+    </header>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm" action="/api/v1/user/register" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="passwordHash" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street">
+            </div>
+            <div class="form-group">
+                <label for="apartment">Apartment:</label>
+                <input type="text" id="apartment" name="apartment">
+            </div>
+            <div class="form-group">
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country">
+            </div>
+            <div class="submitButton">
+                <button type="submit">Register</button>
+            </div>
+            
+        </form>
+        <div class="link">
+            <a href="login.html">Already have an account? Login here</a>
+        </div>
+    </div>
+    <footer class="footer">Designed and Developed by
+        <span>
+            Ahmed Mohsen , Salma Ayman , Sohaila Ahmed and Youssef Mamdouh</span> <i
+            class="fa-regular fa-copyright"></i> 2024
+    </footer>
+    <script src="/reg.js"></script>
+</body>
+</html>

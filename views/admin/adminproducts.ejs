@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css"/>
+    <title>Admin products</title>
+</head>
+
+<body>
+    <div class="admin-panel">
+        <%- include('../parts/adminheader.ejs') %>
+    </div>
+    <div class="content">
+                <h2>Products</h2>
+                <a href="http://localhost:4000/api/v1/admin/addproduct">Add Product</a>
+                <br>
+                <br>
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>Name</th>
+                            <th>Desc</th>
+                            <th>richDescribtion</th>
+                            <th>category</th>
+                            <th>countInStock</th>
+                            <th>rating</th>
+                            <th>Brand</th>
+                            <th>numReviews</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% let x=0; %>
+                        <% products.forEach(product => { %>
+                            <tr>
+                                <td><%= product.name %></td>
+                                <td><%= product.description %></td>
+                                <td><%= product.richDescription %></td>
+                                <td><%= cats[x] %></td>
+                                <td><%= product.countInStock %></td>
+                                <td><%= product.rating %></td>
+                                <td><%= product.brand %></td>
+                                <td><%= product.numReviews %></td>
+                                <td><%= product.price %></td>
+                                <% x++ %>
+                                <td>
+                                    <a href="/api/v1/admin/editproduct/<%= product.id %>">Edit</a>
+                                    <form action="/api/v1/admin/deleteproduct/<%= product.id %>" method="post">
+                                        <input type="submit" value="Delete">
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+        </div>
+
+</body>
+
+</html>

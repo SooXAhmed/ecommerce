@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=https://bootswatch.com/5/sandstone/bootstrap.min.css/>
+</head>
+<body>
+    <h1>my profile</h1>
+    <h2>view and edit my info</h2>
+    <form action="/api/v1/user/updateprofile/<%= data._id %>?_method=PUT" method="POST">
+        <fieldset>
+        <div>
+            <label for="name" class="form-label mt-4">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" value="<%= data.name %>"required>
+        </div>
+        <div>
+            <label  class="form-label mt-4" for="email">Email:</label>
+            <input type="email" id="email" class="form-control" name="email"value="<%= data.email %>" required>
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" value="<%= data.phone %>" required>
+        </div>
+        <div>
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" value="<%= data.street %>">
+        </div>
+        <div>
+            <label for="apartment">Apartment:</label>
+            <input type="text" id="apartment" name="apartment" value="<%= data.apartment %>">
+        </div>
+        <div>
+            <label for="zip">Zip:</label>
+            <input type="text" id="zip" name="zip" value="<%= data.zip %>">
+        </div>
+        <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="<%= data.city %>">
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="<%= data.country %>">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </fieldset>
+    </form>
+    <h3>my orders</h3>
+</body>
+</html>
